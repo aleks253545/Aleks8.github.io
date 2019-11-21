@@ -1,33 +1,5 @@
 $first-primary:#FFC740;
 $second-primary:#9B51E0;
-@keyframes btnShadow{
-    0%  { box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-    100% { box-shadow: 5px 10px 10px rgba(0,0,0,0.5); }
-  }
-  @keyframes fadeLogo{
-    0%  { margin-left:-300px;} 
-    100% { margin-left: 0; }
-  }
-  @keyframes swing {
-    15% {
-      transform: translateX(9px);
-    }
-    30% {
-      transform: translateX(-9px);
-    }
-    40% {
-      transform: translateX(6px);
-    }
-    50% {
-      transform: translateX(-6px);
-    }
-    65% {
-      transform: translateX(3px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
 @mixin btn($heiht,$width,$backColor,$color) {
     width: $width;
     height:$heiht;
@@ -51,7 +23,6 @@ body{
 .container {
     width: 980px;
     margin: auto;
-    overflow: hidden;
     
 }
 @media (max-width:980px){

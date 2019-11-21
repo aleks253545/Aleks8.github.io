@@ -19,9 +19,6 @@
         &__button{
             margin-top: 1rem;
             @include btn(2rem,7rem,$second-primary,white );
-            &:hover{
-                animation: btnShadow 0.5s  forwards;
-            }
         }
     }
 }

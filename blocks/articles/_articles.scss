@@ -23,6 +23,7 @@
         margin-left: 1rem;
         &__text{
             overflow: auto;
+            max-height: 120px;
         }
         &__more,&__tags{
             margin-top:auto;
@@ -69,11 +70,6 @@
         overflow: hidden;
     }
 }
-@media (min-width:768px){
-    .articleContent__text{
-        max-height: 120px;
-    }
-}
 @media (max-width:768px)and(min-width:480px){
     .article{
         margin-top: 2rem !important;
@@ -87,7 +83,7 @@
 @media (max-width:480px){
     .article{
         margin-top: 2rem !important;
-        width:90% !important;
+        width:90%;
         margin:auto;
         &Content{
             min-height:100px;
