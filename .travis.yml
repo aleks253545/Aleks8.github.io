@@ -1,0 +1,5 @@
+	
+language: js
+
+before_install:
+  - gem install rake
