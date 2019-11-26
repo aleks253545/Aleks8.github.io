@@ -1,5 +1,10 @@
 	
 language: js
+stages:
+  - compile
+  - test
+  - name: deploy
+    if: branch = ci
 
 before_install:
-  - gem install rake
+  - gem install rake 
