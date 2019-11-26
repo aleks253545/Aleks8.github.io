@@ -3,9 +3,6 @@
     align-items: center;
     height: 80px;
 }
-.logo{
-  animation: fadeLogo 1.5s forwards;
-}
 .header-search{
     margin:auto 20px auto auto;
     &__input{
@@ -29,7 +26,7 @@
         text-transform: uppercase;
         &:hover{
             background-color:$first-primary ;
-            animation: swing 1s forwards;
+           
             &>a{
                  color: white;
             }
