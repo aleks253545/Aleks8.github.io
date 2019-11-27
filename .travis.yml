@@ -1,5 +1,4 @@
-	
-language: js
+language: node_js
 stages:
   - compile
   - test
