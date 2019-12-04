@@ -1,4 +1,7 @@
 import './main.scss';
+import '../node_modules/jquery/src/jquery'
+
+
 const src=['img/slider2.jpg','img/slider1.jpg','img/Mountains-and-hills-julian-alps.png'];
 const slider = document.querySelector('.slider');
 renderSlider(src);
@@ -55,3 +58,42 @@ function renderSlider(source){
     slider.append(link_prev,link_next);
 
 }
+let param=3;
+// Промисы
+Promise.all([fetch(`https://baconipsum.com/api/?type=meat-and-filler&start-with-lorem=1&paras=${param}`),fetch(`https://picsum.photos/v2/list?page=2&limit=${param}`)])
+.then(values=> Promise.all(values.map(item=>item.json()))
+).then(data=>{
+    data[0].forEach((element,index)=>{
+    $('.posts').append($('<div class="post"></div>').append(`<img class=" post-img" src="${data[1][index].download_url}">`).append(`<span class="post-text">${data[0][index]}</span>`))}
+);});
+
+// асинхронные функции
+// async function GetPosts(){
+//     let responseText = await fetch(`https://baconipsum.com/api/?type=meat-and-filler&start-with-lorem=1&paras=${param}`);
+//     let responseImg=await fetch(`https://picsum.photos/v2/list?page=2&limit=${param}`);
+//     if (responseText.status == 200 && responseImg.status == 200) {
+//         let jsonText = await responseText.json(); // (3)
+//         let jsonImg = await responseImg.json(); // (3)
+//         jsonText.forEach((element,index)=>{
+//                 $('.posts').append($('<div class="post"></div>').append(`<img class=" post-img" src="${jsonImg[index].download_url}">`).append(`<span class="post-text">${jsonText[index]}</span>`))
+//         })
+        
+//       }
+//     else{
+//       throw new Error(Error);
+//     }
+// }
+// GetPosts();
+// динамика
+// $.getJSON('https://baconipsum.com/api/?callback=?', 
+// 	{ 'type':'meat-and-filler', 'start-with-lorem':'1', 'paras':`${param}` }, 
+// 	function(baconGoodness){
+//         $.getJSON('https://picsum.photos/v2/list?',
+//             {'page':'2','limit':`${param}`} ,
+//             function(images){
+//                 baconGoodness.forEach((element,index)=> {
+//                 $('.posts').append($('<div class="post"></div>').append(`<img class=" post-img" src="${images[index].download_url}">`).append(`<span class="post-text">${baconGoodness[index]}</span>`));
+//             });
+//             });
+//     });
+
